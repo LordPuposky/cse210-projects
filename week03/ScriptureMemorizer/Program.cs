@@ -1,3 +1,17 @@
+/*
+Author: Yesid Augusto Romero Ruiz
+Course: CSE 210 - Programming with Classes
+Project: Scripture Memorizer
+
+This program helps users memorize scriptures by displaying a scripture
+(reference and text) and progressively hiding words as the user practices.
+
+Improvement included:
+- When hiding words, the first letter of each hidden word is left visible
+to aid memorization.
+
+User interacts by pressing Enter to hide more words or typing 'quit' to exit.
+*/
 using System;
 
 namespace ScriptureMemorizer
@@ -43,7 +57,7 @@ namespace ScriptureMemorizer
                 }
 
                 // If user presses Enter, hide some words
-                
+
                 if (userInput == "")
                 {
                     // Hide 3 words at a time (adjustable)
