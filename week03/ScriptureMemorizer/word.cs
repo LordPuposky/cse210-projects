@@ -35,21 +35,35 @@ namespace ScriptureMemorizer
         }
 
         // Method to get the display text of the word:
-        // If hidden, return underscores matching the word length
+        // If hidden, return underscores matching the word length, preserving punctuation
         // Otherwise, return the word text itself
         public string GetDisplayText()
         {
             if (_isHidden)
             {
-                if (_text.Length > 1)
+                string coreText = _text;
+                string punctuation = "";
+
+                // Check if last character is punctuation
+                char lastChar = coreText[coreText.Length - 1];
+                if (char.IsPunctuation(lastChar))
+                {
+                    punctuation = lastChar.ToString();
+                    coreText = coreText.Substring(0, coreText.Length - 1);
+                }
+
+                if (coreText.Length > 1)
                 {
                     // Show the first letter and replace the rest with underscores
-                    return _text[0] + new string('_', _text.Length - 1);
+                    return coreText[0] + new string('_', coreText.Length - 1) + punctuation;
+                }
+                else if (coreText.Length == 1)
+                {
+                    return "_" + punctuation;
                 }
                 else
                 {
-                    // If the word is a single letter, just show underscore
-                    return "_";
+                    return punctuation; // In case the word was just punctuation
                 }
             }
             else
@@ -58,6 +72,5 @@ namespace ScriptureMemorizer
                 return _text;
             }
         }
-
     }
 }
