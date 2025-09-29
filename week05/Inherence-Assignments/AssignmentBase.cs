@@ -1,18 +1,18 @@
-// Base class for assignments: common attributes and summary method
+// Base class for assignments
 public class Assignment
 {
-    // Fields (protected: can be accessed by classes that inherit from Assignment)
+    // Private member variables for student name and topic
     protected string _studentName;
     protected string _topic;
 
-    // Constructor (requires student name and assignment topic)
+    // Constructor: receives student name and topic
     public Assignment(string studentName, string topic)
     {
         _studentName = studentName;
         _topic = topic;
     }
 
-    // Method to get a summary of the assignment (name and topic)
+    // Method to return summary (student name and topic)
     public string GetSummary()
     {
         return $"{_studentName} - {_topic}";
