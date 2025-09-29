@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inherence-Assignments", "Inherence-Assignments.csproj", "{5C9DE864-7E49-CC35-F409-6D0D4A8271EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C9DE864-7E49-CC35-F409-6D0D4A8271EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9DE864-7E49-CC35-F409-6D0D4A8271EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9DE864-7E49-CC35-F409-6D0D4A8271EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9DE864-7E49-CC35-F409-6D0D4A8271EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CF5C1E2-5741-47CE-911B-2008AB6AB98A}
+	EndGlobalSection
+EndGlobal
