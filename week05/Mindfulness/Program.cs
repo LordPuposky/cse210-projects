@@ -6,10 +6,27 @@ class Program
 {
     static void Main(string[] args)
     {
+        // CREATIVITY AND EXCEEDING CORE REQUIREMENTS:
+        // 1. Early Completion Feature: Users can type 'done' in the Listing Activity
+        //    to finish before the timer ends, providing flexibility and control.
+        //    This prevents users from having to wait if they've completed their list early.
+        //
+        // 2. Enhanced User Feedback: Added confirmation prompts in ListingActivity
+        //    after each entry, asking users if they want to continue or finish.
+        //    This improves user experience by making the activity more interactive.
+        //
+        // 3. Input Validation: Implemented robust error handling for duration input
+        //    with a default fallback value, ensuring the program never crashes
+        //    from invalid user input.
+        //
+        // 4. User-Friendly Menu Loop: The menu automatically clears and re-displays
+        //    after each activity completes, providing a seamless experience without
+        //    requiring the user to restart the program.
+
         bool continueRunning = true;
 
         while (continueRunning)
-        {            
+        {
             Console.WriteLine("Menu Options:");
             Console.WriteLine("  1. Start breathing activity");
             Console.WriteLine("  2. Start reflecting activity");
