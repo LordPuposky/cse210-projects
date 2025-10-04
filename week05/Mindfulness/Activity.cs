@@ -1,5 +1,7 @@
 using System;
-// Base class for all activities
+using System.Threading;
+
+// Base class for all mindfulness activities
 public class Activity
 {
     protected string _name;
@@ -8,29 +10,89 @@ public class Activity
 
     public Activity()
     {
-        // Default values
-        _name = "Activity";
-        _description = "Base activity class";
+        _name = "";
+        _description = "";
         _duration = 0;
     }
 
+    // Display the starting message and get duration from user
     public void DisplayStartingMessage()
     {
-        Console.WriteLine($"Starting: {_name} - {_description}");
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_name}.");
+        Console.WriteLine();
+        Console.WriteLine(_description);
+        Console.WriteLine();
+        
+        Console.Write("How long, in seconds, would you like for your session? ");
+        string input = Console.ReadLine();
+        
+        if (int.TryParse(input, out int seconds) && seconds > 0)
+        {
+            _duration = seconds;
+        }
+        else
+        {
+            _duration = 30; // Default duration
+        }
+
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        ShowSpinner(5);
     }
 
+    // Display the ending message
     public void DisplayEndingMessage()
     {
-        Console.WriteLine("Well done! You have completed the activity.");
+        Console.WriteLine();
+        Console.WriteLine("Well done!!");
+        ShowSpinner(3);
+        
+        Console.WriteLine();
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
+        ShowSpinner(5);
     }
 
+    // Show spinner animation
     public void ShowSpinner(int seconds)
     {
-        // Simple spinner logic (to be implemented)
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+        int i = 0;
+
+        while (DateTime.Now < endTime)
+        {
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+
+            i++;
+            if (i >= animationStrings.Count)
+            {
+                i = 0;
+            }
+        }
     }
 
+    // Show countdown timer
     public void ShowCountDown(int seconds)
     {
-        // Simple countdown logic (to be implemented)
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+        Console.WriteLine();
     }
 }
