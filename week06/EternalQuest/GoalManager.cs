@@ -69,6 +69,22 @@ public class GoalManager
     public void DisplayPlayerInfo()
     {
         Console.WriteLine($"Current Score: {_score}");
+        
+        int level = (_score / 1000) + 1;
+        
+        Console.WriteLine($"Current Level: {level}");
+        
+        int nextLevelScore = level * 1000;
+        int scoreNeeded = nextLevelScore - _score;
+        
+        if (scoreNeeded > 0)
+        {
+            Console.WriteLine($"Points to next level: {scoreNeeded}");
+        }
+        else
+        {
+            Console.WriteLine("Congratulations! You are at the maximum current level or just leveled up!");
+        }
     }
 
     public void ListGoalNames()
