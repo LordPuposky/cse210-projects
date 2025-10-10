@@ -1,0 +1,69 @@
+# Eternal Quest
+
+A console-based gamified goal tracking system using OOP principles with C#.
+
+## Class Diagram
+
+EternalQuest/
+│
+├── Program.cs
+├── GoalManager.cs
+├── Goal.cs
+├── SimpleGoal.cs
+├── EternalGoal.cs
+├── ChecklistGoal.cs
+├── README.md
+├── img/
+    └── class-diagram.jpg
+
+## Features
+
+- Create, manage, and track goals for personal development.
+- Supports three goal types:
+  - **SimpleGoal:** Single completion goals.
+  - **EternalGoal:** Goals you can repeat unlimited times.
+  - **ChecklistGoal:** Goals requiring multiple completions with bonus points.
+- Interactive menu to create, list, update, and register progress.
+- Tracks and displays player score based on completed events.
+- Save and load goals and score to/from file.
+
+## How to Run
+
+1. Make sure you have [.NET SDK](https://dotnet.microsoft.com/download) installed.
+2. Open your terminal in the project folder.
+3. Run:
+    ```
+    dotnet run
+    ```
+4. Follow the menu prompts to manage your goals and progress.
+
+## Screenshots
+
+
+
+## Example Usage
+
+1. **Create a Goal:**  
+   - Use option `4` in the menu
+   - Select a type
+   - Enter name, description, points, etc.
+
+2. **Record Progress:**  
+   - Use option `5`
+   - Select your goal by its number
+   - Score will increase as you complete goals
+
+3. **Save/Load:**  
+   - Use options `6` and `7` to save/load progress between sessions
+
+## Educational Context
+
+This project is part of my personal and academic portfolio for my studies at **Brigham Young University**.  
+It is used to practice object-oriented programming concepts and software engineering fundamentals.
+
+## Author
+
+Yesid Augusto Romero Ruiz
+
+
+
